@@ -31,7 +31,7 @@ class Placement(object):
 		# The following is a list of indicies of where the node's letter exists in the attempted word.
 		# For example, if node.letter == 'a' and we want to place the word 'against', we would get the
 		# resulting indicies:
-		#				against
+		#       against
 		#       ^ ^
 		#       0 2
 		# (zero and two)
