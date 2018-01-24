@@ -27,6 +27,7 @@ class Board(object):
 		return node
 
 	def create_node(self, data):
+		"""Convenience method used as part of loading the board layout."""
 		node = Node()		
 		if data.isalpha():
 			node.placed = True
@@ -34,6 +35,7 @@ class Board(object):
 		return node
 
 	def assign_neighbors(self, node, i, j):
+		"""Convenience method used as part of loading the board layout."""
 		if j > 0:
 			left_node = self.nodes[i][j - 1]
 			node.neighbors.left = left_node

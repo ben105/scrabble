@@ -18,7 +18,13 @@ class Player(object):
 		if missing_letters > self.number_of_blanks:
 			return False
 		for letter in missing_letters:
+			# Sort the nodes that match the missing letter by the node value, so that
+			# it is efficient to get the least-valued node to use for the blank 
+			# letter. Because blank letters are not worth points, we want to only use
+			# blanks for the cheapest valued nodes.
 			nodes = sorted(Collision.nodes_matching_letter(placement, letter), key=getValue)
 			unused_nodes = [node for node in nodes if node not in self.blank_nodes and not node.placed]
+			# Append this node to the list of player's blank nodes, so we can remember
+			# which node should not be counted in scoring.
 			self.blank_nodes.append(unused_nodes[0])
 		return True

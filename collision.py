@@ -2,6 +2,10 @@ class Collision(object):
 
 	@staticmethod
 	def safe(placement):
+		"""Will return True if there is room for the placement. Letters already
+		placed on the board will be ignored if they match the letter in the
+		placement.
+		"""
 		# We want to make sure that there is some space to place at least one
 		# letter from our hand, and that not all letters are already placed.
 		# This flag will keep track of if we saw empty space.

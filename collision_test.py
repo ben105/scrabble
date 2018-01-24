@@ -46,12 +46,12 @@ class CollisionTests(unittest.TestCase):
 		self.assertFalse(Collision.safe(vertical_placement))
 
 	def testRedundancy(self):
+		# Run the test again, but without any empty space.
 		tiles = ['s', 'a', 'f', 'e', None, None]
 		nodes = self.create_horizontal_nodes(tiles)
 		placements = Placement.placements('safe', nodes[0])
 		placement = placements[0]
 		self.assertFalse(Collision.safe(placement))
-		# Run the test again, but without any empty space.
 		tiles = ['a', 'b', 's', 'a', 'f', 'e', 't', 'b', 'z', 'x', 'h']
 		nodes = self.create_horizontal_nodes(tiles)
 		placements = Placement.placements('safe', nodes[2])
